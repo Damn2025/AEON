@@ -82,7 +82,7 @@ const Header = () => {
       >
         <div className="container mx-auto px-6 py-6 md:py-8 flex justify-between items-center">
           <a
-            href="#"
+            href="/"
             className="text-2xl font-bold tracking-tighter text-white hover:scale-105 transition-transform duration-300 group"
           >
             <span className="relative">
@@ -126,7 +126,7 @@ const Header = () => {
           </nav>
 
           <a
-            href="#"
+            href="#start"
             className="hidden md:block cta-button relative bg-gradient-to-r from-yellow-500 to-yellow-600 text-black font-semibold px-6 py-2 rounded-lg hover:from-yellow-400 hover:to-yellow-500 transition-all duration-300 shadow-lg shadow-yellow-500/30 hover:shadow-yellow-500/50 hover:scale-105 overflow-hidden group"
           >
             <span className="relative z-10">Try AEON Today</span>
@@ -226,7 +226,7 @@ const Header = () => {
       >
         <div className="flex-grow">
           <a
-            href="#"
+            href="/"
             className="text-2xl font-bold tracking-tighter text-white mb-12 block hover:scale-105 transition-transform duration-300 inline-block"
             onClick={closeMenu}
           >
@@ -263,7 +263,7 @@ const Header = () => {
           </nav>
         </div>
         <a
-          href="#"
+          href="#start"
           className="w-full text-center cta-button bg-gradient-to-r from-yellow-500 to-yellow-600 text-black font-semibold px-8 py-3 rounded-lg hover:from-yellow-400 hover:to-yellow-500 transition-all duration-300 shadow-lg shadow-yellow-500/30 hover:shadow-yellow-500/50 hover:scale-105"
           onClick={closeMenu}
         >

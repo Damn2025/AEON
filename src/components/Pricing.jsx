@@ -110,7 +110,7 @@ const Pricing = () => {
                 ))}
               </ul>
               <a
-                href="#"
+                href="#start"
                 className={`mt-8 cta-button w-full text-center font-bold py-3 px-6 rounded-lg ${
                   plan.highlighted
                     ? 'bg-yellow-500 text-black hover:bg-yellow-600 glow-effect'
@@ -135,7 +135,7 @@ const Pricing = () => {
             </p>
           </div>
           <a
-            href="#"
+            href="#contact"
             className="mt-6 md:mt-0 cta-button bg-transparent border-2 border-gray-600 text-gray-200 font-bold py-3 px-8 rounded-lg text-lg hover:bg-gray-800 hover:border-gray-700 flex-shrink-0"
           >
             Contact Sales

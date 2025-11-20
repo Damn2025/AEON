@@ -7,8 +7,6 @@ import {
   FileQuestion,
   BookOpen,
   Lightbulb,
-  LogIn,
-  Zap,
   Mail,
   UserCheck,
   Globe,

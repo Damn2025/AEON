@@ -30,7 +30,6 @@ export const initScrollAnimations = () => {
  */
 export const animateCounter = (element, target, duration = 1500) => {
   let start = null;
-  const initial = 0;
 
   const step = (timestamp) => {
     if (!start) start = timestamp;

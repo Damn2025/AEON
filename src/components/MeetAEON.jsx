@@ -19,7 +19,7 @@ const MeetAEON = () => {
           </p>
         </div>
       </div>
-      <div className='w-full sm:w-[95%] md:w-[90%] lg:w-[85%] h-[300px] sm:h-[400px] md:h-[600px] lg:h-[800px] xl:h-[990px] rounded-[38px] md:rounded-[83px] overflow-hidden mt-8 sm:mt-6 md:mt-8 px-4 sm:px-0 relative flex items-start justify-center border-2' style={{ borderColor: '#FBCE33', boxShadow: '0 0 20px rgba(251, 206, 51, 0.6), 0 0 40px rgba(251, 206, 51, 0.4), 0 0 60px rgba(251, 206, 51, 0.2)' }} >
+      <div className='w-full px-4 py-4 sm:w-[95%]  md:w-[90%] lg:w-[85%] h-[300px] sm:h-[400px] md:h-[600px] lg:h-[800px] xl:h-[990px] rounded-[38px] md:rounded-[83px] overflow-hidden mt-8 sm:mt-6 md:mt-8 px-4 py-4  relative flex items-start justify-center border-2' style={{ borderColor: '#FBCE33', boxShadow: '0 0 20px rgba(251, 206, 51, 0.6), 0 0 40px rgba(251, 206, 51, 0.4), 0 0 60px rgba(251, 206, 51, 0.2)' }} >
         {/* Mobile Image */}
         <img 
           src={aeonMobileImage} 

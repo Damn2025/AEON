@@ -12,8 +12,6 @@ import {
   File,
   Download,
   BarChart3, 
-  BookOpen, 
-  Palette,  
   Settings,
   Mail,
  

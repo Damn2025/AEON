@@ -1,4 +1,4 @@
-import React, { useState, useEffect } from 'react';
+import React from 'react';
 import { useScrollAnimation } from '../utils/useScrollAnimation';
 import Orb from '../utilities/orb';
 
@@ -8,27 +8,7 @@ import Orb from '../utilities/orb';
  */
 const Hero = () => {
   const titleRef = useScrollAnimation();
-  const subtitleRef = useScrollAnimation();
   const badgeRef = useScrollAnimation();
-  const animatedTextRef = useScrollAnimation();
-  
-  const words = ['sales', 'leads', 'sign-ups', 'bookings'];
-  const [currentWordIndex, setCurrentWordIndex] = useState(0);
-  const [isAnimating, setIsAnimating] = useState(false);
-
-  useEffect(() => {
-    const interval = setInterval(() => {
-      setIsAnimating(true);
-      setTimeout(() => {
-        setCurrentWordIndex((prev) => (prev + 1) % words.length);
-        setTimeout(() => {
-          setIsAnimating(false);
-        }, 50);
-      }, 600); // Animation duration
-    }, 3000); // Change word every 3 seconds
-
-    return () => clearInterval(interval);
-  }, [words.length]);
 
   return (
     <section className="relative min-h-screen flex items-center justify-center bg-gradient-to-b from-[#0A0A0A] via-[#101010] to-[#0A0A0A] overflow-hidden  md:py-32">
