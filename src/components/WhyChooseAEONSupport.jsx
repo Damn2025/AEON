@@ -65,7 +65,7 @@ const WhyChooseAEONSupport = () => {
         </div>
 
         <div ref={containerRef} className="max-w-6xl mx-auto">
-          <div className="grid md:grid-cols-2 gap-8">
+          <div className="grid md:grid-cols-1 gap-8">
             {reasons.map((reason, index) => {
               const delay = `delay-${(index + 1) * 100}`;
               return (

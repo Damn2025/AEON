@@ -1,0 +1,244 @@
+import React, { useState } from 'react';
+import { useScrollAnimation } from '../utils/useScrollAnimation';
+import { 
+  Mail, 
+  Send,
+  User,
+  Building,
+  Phone,
+  MessageSquare,
+  FileText
+} from 'lucide-react';
+
+/**
+ * Contact Component
+ * Contact form section with full name, company, email, phone, subject, and message fields
+ */
+const Contact = () => {
+  const titleRef = useScrollAnimation();
+  const formRef = useScrollAnimation();
+  const [formData, setFormData] = useState({
+    fullName: '',
+    company: '',
+    email: '',
+    phone: '',
+    subject: '',
+    message: '',
+  });
+  const [isSubmitting, setIsSubmitting] = useState(false);
+
+  const subjectOptions = [
+    'General Query',
+    'Sales Inquiry',
+    'Technical Support',
+    'Partnership Opportunity',
+    'Feature Request',
+    'Other',
+  ];
+
+  const handleChange = (e) => {
+    const { name, value } = e.target;
+    setFormData(prev => ({
+      ...prev,
+      [name]: value,
+    }));
+  };
+
+  const handleSubmit = async (e) => {
+    e.preventDefault();
+    setIsSubmitting(true);
+    
+    // Simulate form submission
+    setTimeout(() => {
+      alert('Thank you for your message! We will get back to you soon.');
+      setFormData({
+        fullName: '',
+        company: '',
+        email: '',
+        phone: '',
+        subject: '',
+        message: '',
+      });
+      setIsSubmitting(false);
+    }, 1000);
+  };
+
+  return (
+    <section id="contact" className="py-20 bg-[#0A0A0A] relative overflow-hidden">
+      {/* Floating revolving icons */}
+      <div className="absolute top-[10%] left-[3%] w-14 h-14 text-yellow-500/50 animate-revolve-1 hidden lg:block pointer-events-none z-0">
+        <div className="w-full h-full animate-spin-slow">
+          <Mail className="w-full h-full drop-shadow-[0_0_8px_rgba(234,179,8,0.6)]" strokeWidth={1.5} />
+        </div>
+      </div>
+
+      <div className="absolute top-[12%] right-[3%] w-12 h-12 text-yellow-600/50 animate-revolve-2 hidden lg:block pointer-events-none z-0">
+        <div className="w-full h-full animate-spin-slow-reverse">
+          <MessageSquare className="w-full h-full drop-shadow-[0_0_8px_rgba(234,179,8,0.6)]" strokeWidth={1.5} />
+        </div>
+      </div>
+
+      <div className="absolute bottom-[10%] left-[4%] w-16 h-16 text-yellow-500/45 animate-revolve-3 hidden lg:block pointer-events-none z-0">
+        <div className="w-full h-full animate-spin-slow">
+          <Send className="w-full h-full drop-shadow-[0_0_8px_rgba(234,179,8,0.6)]" strokeWidth={1.5} />
+        </div>
+      </div>
+
+      <div className="container mx-auto px-6 relative z-10">
+        {/* Title Section */}
+        <div ref={titleRef} className="text-center max-w-3xl mx-auto animate-on-scroll fade-in-up mb-16">
+          <h2 className="text-3xl md:text-4xl lg:text-5xl font-bold text-white mb-4" style={{ fontFamily: "'Outfit', sans-serif" }}>
+            Get in <span className="bg-gradient-to-r from-yellow-400 to-yellow-600 bg-clip-text text-transparent">Touch</span>
+          </h2>
+          <p className="text-lg text-gray-400" style={{ fontFamily: "'Poppins', sans-serif" }}>
+            Have questions? We'd love to hear from you. Send us a message and we'll respond as soon as possible.
+          </p>
+        </div>
+
+        {/* Contact Form */}
+        <div ref={formRef} className="max-w-3xl mx-auto animate-on-scroll fade-in-up delay-200">
+          <form onSubmit={handleSubmit} className="bg-gradient-to-br from-[#121212] via-[#0F0F0F] to-[#121212] border border-gray-800 rounded-2xl p-6 md:p-8 lg:p-10 space-y-6 hover:border-yellow-500/50 transition-all duration-500">
+            {/* Full Name */}
+            <div className="group">
+              <label htmlFor="fullName" className="flex items-center gap-2 text-gray-300 mb-2 text-sm font-medium" style={{ fontFamily: "'Poppins', sans-serif" }}>
+                <User className="w-4 h-4 text-yellow-500" />
+                Full Name <span className="text-yellow-500">*</span>
+              </label>
+              <input
+                type="text"
+                id="fullName"
+                name="fullName"
+                value={formData.fullName}
+                onChange={handleChange}
+                required
+                className="w-full px-4 py-3 bg-[#0A0A0A] border border-gray-700 rounded-lg text-white placeholder-gray-500 focus:outline-none focus:border-yellow-500 focus:ring-2 focus:ring-yellow-500/20 transition-all duration-300"
+                placeholder="Enter your full name"
+              />
+            </div>
+
+            {/* Company */}
+            <div className="group">
+              <label htmlFor="company" className="flex items-center gap-2 text-gray-300 mb-2 text-sm font-medium" style={{ fontFamily: "'Poppins', sans-serif" }}>
+                <Building className="w-4 h-4 text-yellow-500" />
+                Company
+              </label>
+              <input
+                type="text"
+                id="company"
+                name="company"
+                value={formData.company}
+                onChange={handleChange}
+                className="w-full px-4 py-3 bg-[#0A0A0A] border border-gray-700 rounded-lg text-white placeholder-gray-500 focus:outline-none focus:border-yellow-500 focus:ring-2 focus:ring-yellow-500/20 transition-all duration-300"
+                placeholder="Enter your company name"
+              />
+            </div>
+
+            {/* Email and Phone Row */}
+            <div className="grid grid-cols-1 md:grid-cols-2 gap-6">
+              {/* Email */}
+              <div className="group">
+                <label htmlFor="email" className="flex items-center gap-2 text-gray-300 mb-2 text-sm font-medium" style={{ fontFamily: "'Poppins', sans-serif" }}>
+                  <Mail className="w-4 h-4 text-yellow-500" />
+                  Email <span className="text-yellow-500">*</span>
+                </label>
+                <input
+                  type="email"
+                  id="email"
+                  name="email"
+                  value={formData.email}
+                  onChange={handleChange}
+                  required
+                  className="w-full px-4 py-3 bg-[#0A0A0A] border border-gray-700 rounded-lg text-white placeholder-gray-500 focus:outline-none focus:border-yellow-500 focus:ring-2 focus:ring-yellow-500/20 transition-all duration-300"
+                  placeholder="your.email@example.com"
+                />
+              </div>
+
+              {/* Phone */}
+              <div className="group">
+                <label htmlFor="phone" className="flex items-center gap-2 text-gray-300 mb-2 text-sm font-medium" style={{ fontFamily: "'Poppins', sans-serif" }}>
+                  <Phone className="w-4 h-4 text-yellow-500" />
+                  Phone Number
+                </label>
+                <input
+                  type="tel"
+                  id="phone"
+                  name="phone"
+                  value={formData.phone}
+                  onChange={handleChange}
+                  className="w-full px-4 py-3 bg-[#0A0A0A] border border-gray-700 rounded-lg text-white placeholder-gray-500 focus:outline-none focus:border-yellow-500 focus:ring-2 focus:ring-yellow-500/20 transition-all duration-300"
+                  placeholder="+1 (555) 000-0000"
+                />
+              </div>
+            </div>
+
+            {/* Subject */}
+            <div className="group">
+              <label htmlFor="subject" className="flex items-center gap-2 text-gray-300 mb-2 text-sm font-medium" style={{ fontFamily: "'Poppins', sans-serif" }}>
+                <FileText className="w-4 h-4 text-yellow-500" />
+                Subject <span className="text-yellow-500">*</span>
+              </label>
+              <select
+                id="subject"
+                name="subject"
+                value={formData.subject}
+                onChange={handleChange}
+                required
+                className="w-full px-4 py-3 bg-[#0A0A0A] border border-gray-700 rounded-lg text-white focus:outline-none focus:border-yellow-500 focus:ring-2 focus:ring-yellow-500/20 transition-all duration-300 appearance-none cursor-pointer"
+              >
+                <option value="" disabled className="bg-[#0A0A0A]">Select a subject</option>
+                {subjectOptions.map((option) => (
+                  <option key={option} value={option} className="bg-[#0A0A0A]">
+                    {option}
+                  </option>
+                ))}
+              </select>
+            </div>
+
+            {/* Message */}
+            <div className="group">
+              <label htmlFor="message" className="flex items-center gap-2 text-gray-300 mb-2 text-sm font-medium" style={{ fontFamily: "'Poppins', sans-serif" }}>
+                <MessageSquare className="w-4 h-4 text-yellow-500" />
+                Message <span className="text-yellow-500">*</span>
+              </label>
+              <textarea
+                id="message"
+                name="message"
+                value={formData.message}
+                onChange={handleChange}
+                required
+                rows={6}
+                className="w-full px-4 py-3 bg-[#0A0A0A] border border-gray-700 rounded-lg text-white placeholder-gray-500 focus:outline-none focus:border-yellow-500 focus:ring-2 focus:ring-yellow-500/20 transition-all duration-300 resize-none"
+                placeholder="Tell us about your inquiry..."
+              />
+            </div>
+
+            {/* Submit Button */}
+            <div className="pt-4">
+              <button
+                type="submit"
+                disabled={isSubmitting}
+                className="w-full md:w-auto px-8 py-3 bg-gradient-to-r from-yellow-500 to-yellow-600 text-black font-semibold rounded-lg hover:from-yellow-400 hover:to-yellow-500 transition-all duration-300 shadow-lg shadow-yellow-500/30 hover:shadow-yellow-500/50 hover:scale-105 disabled:opacity-50 disabled:cursor-not-allowed disabled:hover:scale-100 flex items-center justify-center gap-2"
+                style={{ fontFamily: "'Outfit', sans-serif" }}
+              >
+                {isSubmitting ? (
+                  <>
+                    <div className="w-5 h-5 border-2 border-black border-t-transparent rounded-full animate-spin"></div>
+                    Sending...
+                  </>
+                ) : (
+                  <>
+                    <Send className="w-5 h-5" />
+                    Send Message
+                  </>
+                )}
+              </button>
+            </div>
+          </form>
+        </div>
+      </div>
+    </section>
+  );
+};
+
+export default Contact;
+

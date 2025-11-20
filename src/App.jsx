@@ -9,6 +9,7 @@ import Features from "./components/Features";
 import EvokeDifference from "./components/EvokeDifference";
 import GetStarted from "./components/GetStarted";
 import HowAEONWorks from "./components/HowAEONWorks";
+import HowAEONWorksPage from "./components/HowAEONWorksPage";
 import AgentAEONIntro from "./components/AgentAEONIntro";
 import AgentAEONCapabilities from "./components/AgentAEONCapabilities";
 import DelightfulService from "./components/DelightfulService";
@@ -16,6 +17,8 @@ import WhyChooseAEONSupport from "./components/WhyChooseAEONSupport";
 import ElevateExperience from "./components/ElevateExperience";
 import Pricing from "./components/Pricing";
 import Testimonials from "./components/Testimonials";
+import FAQs from "./components/FAQs";
+import Contact from "./components/Contact";
 import FinalCTA from "./components/FinalCTA";
 import { initScrollAnimations } from "./utils/animations";
 
@@ -37,13 +40,15 @@ function App() {
         <Hero />
         <MeetAEON />
         <TrustedBy />
-        <HowAEONWorks />
+        {/* <HowAEONWorks /> */}
+        <HowAEONWorksPage />
         <AgentAEONCapabilities />
         <DelightfulService />
-        <WhyChooseAEONSupport />
         <ElevateExperience />
         <Pricing />
         <Testimonials />
+        <FAQs />
+        <Contact />
         <FinalCTA />
       </main>
     </div>
