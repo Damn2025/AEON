@@ -1,5 +1,6 @@
 import React from 'react';
 import { useScrollAnimation } from '../utils/useScrollAnimation';
+import Deploy from '../assets/Deploy.png';
 import { 
   BarChart3, 
   BookOpen, 

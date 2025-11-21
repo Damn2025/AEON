@@ -282,10 +282,28 @@ html {
   flex-direction: column;
 }
 
+.pricing-card:hover {
+  border-color: #FFC700;
+  box-shadow: 
+    0 0 20px rgba(255, 199, 0, 0.4),
+    0 0 40px rgba(255, 199, 0, 0.2),
+    0 10px 30px -10px rgba(255, 199, 0, 0.3);
+  transform: translateY(-4px);
+}
+
 .pricing-card-highlighted {
   border-color: #FFC700;
   box-shadow: 0 10px 30px -10px rgba(255, 199, 0, 0.3);
   transform: scale(1.02);
+}
+
+.pricing-card-highlighted:hover {
+  border-color: #FFD700;
+  box-shadow: 
+    0 0 25px rgba(255, 199, 0, 0.6),
+    0 0 50px rgba(255, 199, 0, 0.3),
+    0 10px 30px -10px rgba(255, 199, 0, 0.5);
+  transform: scale(1.02) translateY(-4px);
 }
 
 .pricing-card ul li {

@@ -1,49 +1,20 @@
-import React, { useEffect } from "react";
-import Header from "./components/Header";
-import Hero from "./components/Hero";
-import MeetAEON from "./components/MeetAEON";
-import TrustedBy from "./components/TrustedBy";
-import HowAEONWorksPage from "./components/HowAEONWorksPage";
-import AgentAEONCapabilities from "./components/AgentAEONCapabilities";
-import DelightfulService from "./components/DelightfulService";
-import ElevateExperience from "./components/ElevateExperience";
-import Pricing from "./components/Pricing";
-import Testimonials from "./components/Testimonials";
-import FAQs from "./components/FAQs";
-import Contact from "./components/Contact";
-import FinalCTA from "./components/FinalCTA";
-import { initScrollAnimations } from "./utils/animations";
+import React from "react";
+import { BrowserRouter as Router, Routes, Route } from "react-router-dom";
+import Home from "./components/Home";
+import PrivacyPolicy from "./components/PrivacyPolicy";
 
 /**
  * Main App Component
- * Renders all sections of the AEON website
+ * Sets up routing for the AEON website
  */
 function App() {
-  // Initialize scroll animations on mount
-  useEffect(() => {
-    const cleanup = initScrollAnimations();
-    return cleanup;
-  }, []);
-
   return (
-    <div className="App">
-      <Header />
-      <main>
-        <Hero />
-        <MeetAEON />
-        <TrustedBy />
-        {/* <HowAEONWorks /> */}
-        <HowAEONWorksPage />
-        <AgentAEONCapabilities />
-        <DelightfulService />
-        <ElevateExperience />
-        <Pricing />
-        <Testimonials />
-        <FAQs />
-        <Contact />
-        <FinalCTA />
-      </main>
-    </div>
+    <Router>
+      <Routes>
+        <Route path="/" element={<Home />} />
+        <Route path="/privacy-policy" element={<PrivacyPolicy />} />
+      </Routes>
+    </Router>
   );
 }
 

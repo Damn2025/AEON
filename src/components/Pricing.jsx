@@ -126,7 +126,7 @@ const Pricing = () => {
         {/* Enterprise Plan */}
         <div
           ref={enterpriseRef}
-          className="mt-16 bg-gradient-to-br from-[#1A1A1A] to-[#101010] border border-[#2A2A2A] p-8 rounded-2xl flex flex-col md:flex-row justify-between items-center animate-on-scroll fade-in-up"
+          className="mt-16 bg-gradient-to-br from-[#1A1A1A] to-[#101010] border border-[#2A2A2A] hover:border-[#FFC700] p-8 rounded-2xl flex flex-col md:flex-row justify-between items-center animate-on-scroll fade-in-up transition-all duration-300 hover:shadow-[0_0_20px_rgba(255,199,0,0.4),0_0_40px_rgba(255,199,0,0.2)] hover:-translate-y-1"
         >
           <div>
             <h3 className="text-3xl font-bold text-white">Enterprise Plan</h3>

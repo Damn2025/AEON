@@ -1,4 +1,4 @@
-import React, { useState } from 'react';
+import React, { useState, useEffect } from 'react';
 import { useScrollAnimation } from '../utils/useScrollAnimation';
 import { 
   Mail, 
@@ -7,8 +7,11 @@ import {
   Building,
   Phone,
   MessageSquare,
-  FileText
+  FileText,
+  CheckCircle,
+  XCircle
 } from 'lucide-react';
+import emailjs from '@emailjs/browser';
 
 /**
  * Contact Component
@@ -26,6 +29,7 @@ const Contact = () => {
     message: '',
   });
   const [isSubmitting, setIsSubmitting] = useState(false);
+  const [status, setStatus] = useState({ type: '', message: '' });
 
   const subjectOptions = [
     'General Query',
@@ -36,21 +40,71 @@ const Contact = () => {
     'Other',
   ];
 
+  // Initialize EmailJS
+  useEffect(() => {
+    emailjs.init(process.env.REACT_APP_EMAILJS_PUBLIC_KEY || "AWeroNVwYG4aGzG1D");
+  }, []);
+
   const handleChange = (e) => {
     const { name, value } = e.target;
     setFormData(prev => ({
       ...prev,
       [name]: value,
     }));
+    // Clear status when user starts typing
+    if (status.message) {
+      setStatus({ type: '', message: '' });
+    }
   };
 
   const handleSubmit = async (e) => {
     e.preventDefault();
     setIsSubmitting(true);
+    setStatus({ type: '', message: '' });
     
-    // Simulate form submission
-    setTimeout(() => {
-      alert('Thank you for your message! We will get back to you soon.');
+    // Prepare payload from form data
+    const templateParams = {
+      fullName: formData.fullName,
+      email: formData.email,
+      company: formData.company || '',
+      phone: formData.phone || '',
+      subject: formData.subject,
+      message: formData.message,
+    };
+
+    // Console log form data and payload before sending
+    console.log('📧 Contact Form Data:', {
+      fullName: formData.fullName,
+      company: formData.company,
+      email: formData.email,
+      phone: formData.phone,
+      subject: formData.subject,
+      message: formData.message,
+    });
+    console.log('📦 Form Element (e.target):', e.target);
+    console.log('📦 Form Data as Object:', Object.fromEntries(new FormData(e.target)));
+    console.log('📦 Template Params Payload:', templateParams);
+
+    try {
+      // Send form data as payload using EmailJS
+      const response = await emailjs.send(
+        process.env.REACT_APP_EMAILJS_SERVICE_ID || "service_1wzzo5z",
+        process.env.REACT_APP_EMAILJS_TEMPLATE_ID || "template_pw54fxy",
+        templateParams
+      );
+
+      // Console log successful response
+      console.log('✅ EmailJS Response:', response);
+      console.log('✅ Status:', response.status);
+      console.log('✅ Text:', response.text);
+
+      // Success
+      setStatus({ 
+        type: 'success', 
+        message: 'Message sent successfully! We will get back to you soon.' 
+      });
+      
+      // Reset form
       setFormData({
         fullName: '',
         company: '',
@@ -59,8 +113,23 @@ const Contact = () => {
         subject: '',
         message: '',
       });
+    } catch (err) {
+      // Console log error details
+      console.error('❌ EmailJS Error:', err);
+      console.error('❌ Error Details:', {
+        code: err.code,
+        text: err.text,
+        message: err.message,
+      });
+
+      // Error
+      setStatus({ 
+        type: 'error', 
+        message: 'Failed to send message. Please try again or contact us directly.' 
+      });
+    } finally {
       setIsSubmitting(false);
-    }, 1000);
+    }
   };
 
   return (
@@ -97,7 +166,7 @@ const Contact = () => {
 
         {/* Contact Form */}
         <div ref={formRef} className="max-w-3xl mx-auto animate-on-scroll fade-in-up delay-200">
-          <form onSubmit={handleSubmit} className="bg-gradient-to-br from-[#121212] via-[#0F0F0F] to-[#121212] border border-gray-800 rounded-2xl p-6 md:p-8 lg:p-10 space-y-6 hover:border-yellow-500/50 transition-all duration-500">
+          <form id="contact-form" onSubmit={handleSubmit} className="bg-gradient-to-br from-[#121212] via-[#0F0F0F] to-[#121212] border border-gray-800 rounded-2xl p-6 md:p-8 lg:p-10 space-y-6 hover:border-yellow-500/50 transition-all duration-500">
             {/* Full Name */}
             <div className="group">
               <label htmlFor="fullName" className="flex items-center gap-2 text-gray-300 mb-2 text-sm font-medium" style={{ fontFamily: "'Poppins', sans-serif" }}>
@@ -211,6 +280,24 @@ const Contact = () => {
                 placeholder="Tell us about your inquiry..."
               />
             </div>
+
+            {/* Status Message */}
+            {status.message && (
+              <div className={`flex items-center gap-3 p-4 rounded-lg ${
+                status.type === 'success' 
+                  ? 'bg-green-500/10 border border-green-500/30 text-green-400' 
+                  : 'bg-red-500/10 border border-red-500/30 text-red-400'
+              }`}>
+                {status.type === 'success' ? (
+                  <CheckCircle className="w-5 h-5 flex-shrink-0" />
+                ) : (
+                  <XCircle className="w-5 h-5 flex-shrink-0" />
+                )}
+                <p className="text-sm font-medium" style={{ fontFamily: "'Poppins', sans-serif" }}>
+                  {status.message}
+                </p>
+              </div>
+            )}
 
             {/* Submit Button */}
             <div className="pt-4">

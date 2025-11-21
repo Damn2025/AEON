@@ -1,5 +1,7 @@
 import React from 'react';
 import { useScrollAnimation } from '../utils/useScrollAnimation';
+import  Deploy  from '../assets/Deploy.png';
+import Process from '../assets/Process3.png';
 import { 
   Upload, 
   Brain, 
@@ -40,14 +42,14 @@ const HowAEONWorksPage = () => {
       title: 'Knowledge Processing',
       description: 'AEON\'s advanced AI processes and understands your content, extracting key information, relationships, and context. The system learns from your data to provide accurate, context-aware responses tailored to your business.',
       icon: <Brain className="w-8 h-8" />,
-      image: 'https://images.unsplash.com/photo-1677442136019-21780ecad995?w=800&h=600&fit=crop',
+      image: Process,
     },
     {
       number: '3',
       title: 'Deploy',
       description: 'Once your knowledge base is processed, deploy AEON instantly with a single script. Your AI assistant goes live across your website, portals, or dashboards, ready to help your customers 24/7.',
       icon: <Rocket className="w-8 h-8" />,
-      image: 'https://images.unsplash.com/photo-1460925895917-afdab827c52f?w=800&h=600&fit=crop',
+      image: Deploy,
     },
   ];
 

@@ -40,7 +40,7 @@ const Hero = () => {
             >
               <span className="bg-gradient-to-r from-yellow-400 via-yellow-500 to-yellow-600 bg-clip-text text-transparent">AEON</span>
               <br />
-              <span className="text-3xl sm:text-4xl md:text-5xl lg:text-5xl font-semibold text-gray-300 mt-2 block" style={{ fontFamily: "'Inter', sans-serif" }}>
+              <span className="text-3xl sm:text-4xl md:text-5xl lg:text-5xl font-semibold text-gray-300 mt-2 block" style={{ fontFamily: "'Rajdhani', sans-serif" }}>
                 Your Dedicated AI Assistant
               </span>
             </h2>
