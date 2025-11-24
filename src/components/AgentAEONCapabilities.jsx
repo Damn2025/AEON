@@ -1,11 +1,12 @@
 import React from 'react';
 import { useScrollAnimation } from '../utils/useScrollAnimation';
-import proactiveEngagementImage from '../assets/Proactive_Engagement.png';
-import MultiLanguage from '../assets/Multi_Language.jpg';
-import Powered from '../assets/Powered.jpg';
-import Seamless from '../assets/Seamless.jpg';
+import proactiveEngagementImage from '../assets/Engagement.jpg';
+import MultiLanguage from '../assets/MultiLingual.png';
+
 import DeployImage from '../assets/Deploy3.png';
 import SeamlessIntegrationsImage from '../assets/Seamless_Integrations.png';
+import UploadImage from '../assets/Upload.png';
+import Customer from '../assets/Customerss.png'
 
 /**
  * Agent AEON Capabilities Component
@@ -39,18 +40,14 @@ const AgentAEONCapabilities = () => {
     {
       title: 'Powered by Your Knowledge',
       description: 'AEON is trained on your documents, URLs, FAQs, and product data, delivering responses that are always accurate, updated, and aligned with your brand messaging.',
-      image: Powered,
+      image: UploadImage,
     },
-    {
-      title: 'Conversion-Focused Interactions',
-      description: 'From identifying high-intent visitors to qualifying leads, AEON turns customer conversations into trackable business outcomes, helping you grow faster with less effort.',
-      image: SeamlessIntegrationsImage,
-    },
-    {
-      title: 'Seamless Integrations',
-      description: 'Connect AEON with your tools — CRM, email platforms, analytics, or internal systems — to create an end-to-end automated customer experience.',
-      image: Seamless,
-    },
+    // {
+    //   title: 'Instant Checkout in Chat',
+    //   description: 'Accept payments directly inside the chat to close sales the moment customers are ready to buy. Remove extra steps, reduce drop-offs, and turn your conversations into instant conversions with a smooth, secure in-chat checkout experience.',
+    //   image: SeamlessIntegrationsImage,
+    // },
+ 
   ];
 
   const refs = [card1Ref, card2Ref, card3Ref, card4Ref, card5Ref, card6Ref];
@@ -101,6 +98,36 @@ const AgentAEONCapabilities = () => {
               </div>
             );
           })}
+        </div>
+        
+        {/* Full width last card with row layout */}
+        <div
+          key={6}
+          ref={refs[5]}
+          className="animate-on-scroll fade-in-up delay-600 group mt-8 max-w-7xl mx-auto"
+        >
+          <div className="flex flex-col lg:flex-row rounded-2xl overflow-hidden border border-gray-800 hover:border-yellow-500/50 transition-all duration-500 hover:shadow-2xl hover:shadow-yellow-500/20 bg-[#1A1A1A]">
+            {/* Content Section - Left */}
+            <div className="flex-1 p-8 lg:p-12 flex flex-col justify-center">
+              <h3 className="text-2xl md:text-3xl lg:text-4xl font-bold text-white mb-4" style={{ fontFamily: "'Outfit', sans-serif" }}>
+                Instant Checkout in Chat
+              </h3>
+              <p className="text-gray-300 leading-relaxed text-base lg:text-lg" style={{ fontFamily: "'Poppins', sans-serif" }}>
+                Accept payments directly inside the chat to close sales the moment customers are ready to buy. Remove extra steps, reduce drop-offs, and turn your conversations into instant conversions with a smooth, secure in-chat checkout experience.
+              </p>
+            </div>
+
+            {/* Image Section - Right */}
+            <div className="relative w-full lg:w-1/2 h-[350px] lg:h-auto overflow-hidden">
+              <img 
+                src={Customer} 
+                alt="Instant Checkout in Chat"
+                className="w-full  object-cover transition-transform duration-500 group-hover:scale-110"
+              />
+              {/* Optional overlay gradient */}
+              <div className="absolute inset-0 bg-gradient-to-t from-black/10 to-transparent"></div>
+            </div>
+          </div>
         </div>
       </div>
     </section>

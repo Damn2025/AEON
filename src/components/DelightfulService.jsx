@@ -1,5 +1,6 @@
 import React from 'react';
 import { useScrollAnimation } from '../utils/useScrollAnimation';
+import ServicesImage from '../assets/Services.png';
 
 /**
  * Delightful Service Component
@@ -91,24 +92,24 @@ const DelightfulService = () => {
           <div ref={rightRef} className="animate-on-scroll fade-in-right delay-200 relative">
             <div className="relative">
               {/* Animated circles */}
-              <div className="absolute top-1/2 left-1/2 transform -translate-x-1/2 -translate-y-1/2 w-96 h-96 border-2 border-yellow-500/20 rounded-full animate-pulse"></div>
-              <div className="absolute top-1/2 left-1/2 transform -translate-x-1/2 -translate-y-1/2 w-72 h-72 border-2 border-yellow-500/20 rounded-full animate-pulse" style={{ animationDelay: '0.5s' }}></div>
-              <div className="absolute top-1/2 left-1/2 transform -translate-x-1/2 -translate-y-1/2 w-48 h-48 border-2 border-yellow-500/30 rounded-full animate-pulse" style={{ animationDelay: '1s' }}></div>
+              <div className="absolute top-1/2 left-1/2 transform -translate-x-1/2 -translate-y-1/2 w-[500px] h-[500px] border-2 border-yellow-500/20 rounded-full animate-pulse"></div>
               
-              {/* Center content */}
-              <div className="relative z-10 bg-gradient-to-br from-yellow-500/20 to-yellow-600/20 backdrop-blur-xl rounded-3xl p-12 border border-white/10">
-                <div className="text-center">
-                  <div className="inline-flex items-center justify-center w-24 h-24 rounded-full bg-gradient-to-br from-yellow-500 to-yellow-600 mb-6 animate-bounce" style={{ animationDuration: '2s' }}>
-                    <svg className="w-12 h-12 text-black" fill="none" stroke="currentColor" viewBox="0 0 24 24">
-                      <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M5 13l4 4L19 7" />
-                    </svg>
-                  </div>
-                  <h3 className="text-3xl font-bold text-white mb-4" style={{ fontFamily: "'Outfit', sans-serif" }}>
-                    Always Ready
-                  </h3>
-                  <p className="text-gray-300 text-lg" style={{ fontFamily: "'Poppins', sans-serif" }}>
-                    Serving customers around the clock with intelligence and care
-                  </p>
+              {/* Center content with Services image in circle */}
+              <div className="relative z-10 flex items-center justify-center">
+                {/* Background circle */}
+                <div className="absolute w-[450px] h-[450px] rounded-full bg-gradient-to-br from-[#121212] via-[#1A1A1A] to-[#0A0A0A] border-2 border-gray-800 shadow-2xl">
+                  {/* Subtle yellow glow overlay */}
+                  <div className="absolute inset-0 rounded-full" style={{
+                    background: 'radial-gradient(circle, rgba(255, 199, 0, 0.1) 0%, rgba(255, 199, 0, 0.05) 50%, transparent 100%)'
+                  }}></div>
+                </div>
+                {/* Image circle */}
+                <div className="relative z-10 w-[400px] h-[400px] rounded-full overflow-hidden border-4 border-yellow-500/40 shadow-2xl shadow-yellow-500/20">
+                  <img 
+                    src={ServicesImage} 
+                    alt="Services" 
+                    className="w-full h-full object-cover"
+                  />
                 </div>
               </div>
             </div>
