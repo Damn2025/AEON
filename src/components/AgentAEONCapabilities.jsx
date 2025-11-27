@@ -4,7 +4,6 @@ import proactiveEngagementImage from '../assets/Engagement.jpg';
 import MultiLanguage from '../assets/MultiLingual.png';
 
 import DeployImage from '../assets/Deploy3.png';
-import SeamlessIntegrationsImage from '../assets/Seamless_Integrations.png';
 import UploadImage from '../assets/Upload.png';
 import Customer from '../assets/Customerss.png'
 
