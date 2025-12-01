@@ -2,6 +2,7 @@ import React, { useEffect } from "react";
 import Header from "./Header";
 import Hero from "./Hero";
 import MeetAEON from "./MeetAEON";
+import AIAdoption from "./AIAdoption";
 import TrustedBy from "./TrustedBy";
 import HowAEONWorksPage from "./HowAEONWorksPage";
 import AgentAEONCapabilities from "./AgentAEONCapabilities";
@@ -34,11 +35,10 @@ function Home() {
         <Hero />
         <MeetAEON />
         <TrustedBy />
-        {/* <HowAEONWorks /> */}
         <HowAEONWorksPage />
         <AgentAEONCapabilities />
         <DelightfulService />
-        <ElevateExperience />
+        <AIAdoption/>
         <Pricing />
         <Testimonials />
         <FAQs />
