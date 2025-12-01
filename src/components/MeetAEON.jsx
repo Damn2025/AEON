@@ -15,7 +15,7 @@ const MeetAEON = () => {
             className="text-xl sm:text-2xl md:text-3xl lg:text-4xl xl:text-5xl font-bold  leading-tight"
             style={{ fontFamily: "'Outfit', sans-serif", fontWeight: 800 }}
           >
-            <span className="bg-gradient-to-r from-yellow-400 via-yellow-500 to-yellow-600 bg-clip-text text-transparent">Meet AEON —</span> <span className='font-semibold text-white'>your smart platform to build <span className="bg-gradient-to-r from-yellow-400 via-yellow-500 to-yellow-600 bg-clip-text text-transparent font-bold">custom AI chatbots</span> that drive <span className="bg-gradient-to-r from-yellow-400 via-yellow-500 to-yellow-600 bg-clip-text text-transparent font-bold">real business results</span>. Engage visitors, capture <span className="bg-gradient-to-r from-yellow-400 via-yellow-500 to-yellow-600 bg-clip-text text-transparent font-bold">high-intent leads</span>, and automate responses with <span className="bg-gradient-to-r from-yellow-400 via-yellow-500 to-yellow-600 bg-clip-text text-transparent font-bold">precision</span>. AEON helps you convert everyday interactions into <span className="bg-gradient-to-r from-yellow-400 via-yellow-500 to-yellow-600 bg-clip-text text-transparent font-bold">meaningful outcomes</span> — effortlessly and at scale. </span>
+            Meet <span className="bg-gradient-to-r from-yellow-400 via-yellow-500 to-yellow-600 bg-clip-text text-transparent">AEON —</span> your dedicated <span className="bg-gradient-to-r from-yellow-400 via-yellow-500 to-yellow-600 bg-clip-text text-transparent font-bold">AI Assistant</span> and the first step towards AI adoption. Powered by <span className="bg-gradient-to-r from-yellow-400 via-yellow-500 to-yellow-600 bg-clip-text text-transparent font-bold">EVOKE,</span> AEON transforms your knowledge base into <span className="bg-gradient-to-r from-yellow-400 via-yellow-500 to-yellow-600 bg-clip-text text-transparent font-bold">an intelligent assistant</span> that engages customers, captures qualified leads, and automates responses with precision. It turns everyday interactions into <span className="bg-gradient-to-r from-yellow-400 via-yellow-500 to-yellow-600 bg-clip-text text-transparent font-bold">measurable business outcomes</span> effortlessly and at scale.
           </p>
         </div>
       </div>
@@ -40,4 +40,3 @@ const MeetAEON = () => {
 };
 
 export default MeetAEON;
-
