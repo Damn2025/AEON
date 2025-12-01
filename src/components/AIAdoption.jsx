@@ -11,7 +11,7 @@ const AIAdoption = () => {
   return (
     <section id="ai-adoption" className="py-20 bg-[#0A0A0A] overflow-hidden">
       <div ref={sectionRef} className="container mx-auto px-6 animate-on-scroll fade-in-up">
-        <div className="text-center max-w-4xl mx-auto">
+        <div className="text-center max-w-5xl mx-auto">
           <h2 className="text-7xl md:text-7xl font-bold text-white mb-6" style={{ fontFamily: "'Outfit', sans-serif" }}>
             Start With a Chatbot. Accelerate Your <br></br><span className="bg-gradient-to-r from-yellow-400 to-yellow-600 bg-clip-text itlaic text-transparent">AI Adoption.</span>  
           </h2>
