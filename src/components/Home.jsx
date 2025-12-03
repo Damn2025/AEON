@@ -7,7 +7,6 @@ import TrustedBy from "./TrustedBy";
 import HowAEONWorksPage from "./HowAEONWorksPage";
 import AgentAEONCapabilities from "./AgentAEONCapabilities";
 import DelightfulService from "./DelightfulService";
-import ElevateExperience from "./ElevateExperience";
 import Pricing from "./Pricing";
 import Testimonials from "./Testimonials";
 import FAQs from "./FAQs";
